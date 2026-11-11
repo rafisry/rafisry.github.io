@@ -1,0 +1,627 @@
+
+/* ========================================
+   1. GLOBAL
+======================================== */
+
+:root {
+    --background: #ffffff;
+    --surface: #f5f5f5;
+    --text: #171717;
+    --muted: #737373;
+    --subtle: #a3a3a3;
+    --border: #dedede;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.55;
+}
+
+main {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 7%;
+}
+
+section {
+    scroll-margin-top: 40px;
+}
+
+/* ========================================
+   2. HEADER
+======================================== */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 28px 7%;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brand {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.brand-caption {
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.3px;
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 28px;
+}
+
+.site-header nav a {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ========================================
+   3. HERO
+======================================== */
+
+.hero {
+    padding-top: 100px;
+    padding-bottom: 65px;
+}
+
+.eyebrow,
+.section-label p,
+.contact-label,
+.experience-meta,
+.education-meta,
+.project-meta,
+.thesis-label,
+.experience-category .category-label,
+.previous-heading p {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    margin: 0 0 36px;
+    color: var(--muted);
+}
+
+.hero h2 {
+    max-width: 1000px;
+    margin: 0;
+    font-size: clamp(56px, 7vw, 88px);
+    font-weight: 500;
+    letter-spacing: -4px;
+    line-height: 1.05;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 55px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.hero-bottom .intro {
+    max-width: 480px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.edition {
+    flex-shrink: 0;
+    margin: 0;
+    color: var(--subtle);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* ========================================
+   4. SHARED SECTION LAYOUT
+======================================== */
+
+.about-section,
+.experience-section,
+.education-section,
+.projects-section {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 70px;
+    margin-top: 100px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+}
+
+.section-label p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.about-content h2,
+.experience-content h2,
+.education-content h2,
+.projects-content h2 {
+    margin: 0 0 36px;
+    font-size: 44px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    line-height: 1.15;
+}
+
+/* ========================================
+   5. ABOUT
+======================================== */
+
+.about-content h2 {
+    max-width: 650px;
+}
+
+.about-content p {
+    max-width: 680px;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.about-content .about-description {
+    color: var(--text);
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* ========================================
+   6. EXPERIENCE
+======================================== */
+
+.experience-content h2 {
+    margin-bottom: 40px;
+}
+
+.experience-category {
+    margin-top: 42px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-category .category-label {
+    margin: 0;
+    color: var(--muted);
+}
+
+.experience-item {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-item.featured {
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.experience-meta,
+.education-meta,
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--muted);
+}
+
+.experience-item h3,
+.education-item h3,
+.thesis-item h3,
+.project-card h3 {
+    margin: 18px 0 8px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.35;
+}
+
+.experience-item p,
+.experience-item ul {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.experience-item .company {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.experience-item ul {
+    padding-left: 20px;
+}
+
+.experience-item ul li {
+    margin-bottom: 9px;
+}
+
+.previous-heading {
+    margin-top: 55px;
+    padding-bottom: 10px;
+}
+
+.previous-heading p {
+    color: var(--muted);
+}
+
+/* ========================================
+   7. EDUCATION
+======================================== */
+
+.education-content h2 {
+    margin-bottom: 40px;
+}
+
+.education-item {
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+}
+
+.education-major {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.education-school {
+    margin-top: 12px;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.education-details {
+    margin-top: 22px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border-left: 2px solid var(--text);
+}
+
+.education-details p {
+    margin: 4px 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.thesis-item {
+    margin-top: 32px;
+}
+
+.thesis-label {
+    color: var(--muted);
+}
+
+.thesis-item h3 {
+    max-width: 650px;
+}
+
+.thesis-item p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.thesis-item .thesis-focus {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+
+/* ========================================
+   8. SELECTED PROJECTS
+======================================== */
+
+.projects-content h2 {
+    margin-bottom: 40px;
+}
+
+.project-card {
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.project-card h3 {
+    max-width: 650px;
+    margin-top: 28px;
+}
+
+.project-role {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.project-description {
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.project-focus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.project-focus span {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   9. CONTACT
+======================================== */
+
+.contact-section {
+    margin-top: 110px;
+    padding: 28px 0 90px;
+    border-top: 1px solid var(--border);
+}
+
+.contact-label {
+    margin: 0;
+    color: var(--muted);
+}
+
+.contact-content {
+    max-width: 850px;
+    margin: 65px auto 0;
+}
+
+.contact-content h2 {
+    margin: 0;
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 500;
+    letter-spacing: -3px;
+    line-height: 1.1;
+}
+
+.contact-content > p {
+    max-width: 500px;
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.contact-email {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 45px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--text);
+    font-size: clamp(16px, 3vw, 22px);
+}
+
+.contact-email span {
+    color: var(--muted);
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+/* ========================================
+   10. FOOTER
+======================================== */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 26px 7%;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer p,
+.site-footer a {
+    margin: 0;
+    color: var(--subtle);
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+/* ========================================
+   11. RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+    main {
+        padding: 0 6%;
+    }
+
+    .site-header {
+        padding: 24px 6%;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .site-header nav {
+        gap: 18px;
+    }
+
+    .hero {
+        padding-top: 75px;
+    }
+
+    .hero h2 {
+        font-size: clamp(48px, 9vw, 64px);
+        letter-spacing: -3px;
+    }
+
+    .about-section,
+    .experience-section,
+    .education-section,
+    .projects-section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 85px;
+    }
+
+    .about-content h2,
+    .experience-content h2,
+    .education-content h2,
+    .projects-content h2 {
+        font-size: 40px;
+    }
+
+    .contact-section {
+        margin-top: 85px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .site-header nav {
+        gap: 13px;
+    }
+
+    .site-header nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+
+    .hero h2 {
+        font-size: 48px;
+        letter-spacing: -2.5px;
+    }
+
+    .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 42px;
+    }
+
+    .about-content h2,
+    .experience-content h2,
+    .education-content h2,
+    .projects-content h2 {
+        font-size: 36px;
+        letter-spacing: -1.5px;
+    }
+
+    .about-content p,
+    .experience-item p,
+    .experience-item ul,
+    .education-major,
+    .education-school,
+    .thesis-item p,
+    .project-role,
+    .project-description,
+    .contact-content > p {
+        font-size: 15px;
+    }
+
+    .about-content .about-description {
+        font-size: 16px;
+    }
+
+    .education-details p {
+        font-size: 14px;
+    }
+
+    .experience-item h3,
+    .education-item h3,
+    .thesis-item h3,
+    .project-card h3 {
+        font-size: 20px;
+    }
+
+    .experience-item.featured,
+    .project-card {
+        padding: 22px;
+    }
+
+    .contact-content h2 {
+        font-size: 44px;
+        letter-spacing: -2px;
+    }
+
+    .contact-content {
+        margin-top: 45px;
+    }
+
+    .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px 6%;
+    }
+}
