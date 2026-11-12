@@ -61,7 +61,15 @@ section {
     justify-content: space-between;
     gap: 32px;
     padding: 28px 7%;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(80, 75, 65, 0.15);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(244, 241, 235, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .brand-group {
@@ -96,13 +104,38 @@ section {
     font-weight: 500;
 }
 
+
 /* ========================================
    3. HERO
 ======================================== */
 
 .hero {
+    position: relative;
+    isolation: isolate;
     padding-top: 100px;
     padding-bottom: 65px;
+}
+
+/* Full-width architectural background */
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 calc(50% - 50vw);
+
+    background-image:
+        linear-gradient(
+            rgba(244, 241, 235, 0.72),
+            rgba(244, 241, 235, 0.82)
+        ),
+        url("assets/bangunan.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    filter: grayscale(100%);
 }
 
 .eyebrow,
@@ -119,10 +152,10 @@ section {
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
-
 .eyebrow {
     margin: 0 0 36px;
-    color: var(--muted);
+    color: #45433f;
+    font-weight: 500;
 }
 
 .hero h2 {
@@ -132,6 +165,8 @@ section {
     font-weight: 500;
     letter-spacing: -4px;
     line-height: 1.05;
+    color: #252522;
+    text-shadow: 0 1px 8px rgba(244, 241, 235, 0.25);
 }
 
 .hero-bottom {
@@ -141,13 +176,13 @@ section {
     gap: 40px;
     margin-top: 55px;
     padding-top: 24px;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(45, 43, 39, 0.45);
 }
 
 .hero-bottom .intro {
     max-width: 480px;
     margin: 0;
-    color: var(--muted);
+    color: #45433f;
     font-size: 16px;
     line-height: 1.85;
 }
@@ -155,8 +190,9 @@ section {
 .edition {
     flex-shrink: 0;
     margin: 0;
-    color: var(--subtle);
+    color: #45433f;
     font-size: 9px;
+    font-weight: 500;
     letter-spacing: 1.5px;
 }
 
@@ -192,10 +228,29 @@ section {
     line-height: 1.15;
 }
 
+
+
 /* ========================================
    5. ABOUT
 ======================================== */
 
+/* Profile photo in the existing left column */
+.about-photo {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 32px;
+    overflow: hidden;
+}
+
+.about-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* About content — original position preserved */
 .about-content h2 {
     max-width: 650px;
 }
@@ -212,6 +267,22 @@ section {
     color: var(--text);
     font-size: 19px;
     line-height: 1.8;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .about-photo {
+        max-width: 220px;
+        margin-top: 24px;
+    }
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+    .about-content .about-description {
+        font-size: 17px;
+    }
 }
 
 /* ========================================
@@ -298,6 +369,29 @@ section {
    7. EDUCATION
 ======================================== */
 
+/* Academic diploma image */
+.education-image {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 32px;
+    overflow: hidden;
+}
+
+.education-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .education-image {
+        max-width: 220px;
+        margin-top: 24px;
+    }
+}
 .education-content h2 {
     margin-bottom: 40px;
 }
