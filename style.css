@@ -119,9 +119,9 @@ section {
 /* Full-width architectural background */
 .hero::before {
     content: "";
-    position: fixed;
+    position: absolute;
     z-index: -1;
-    inset: 0 ;
+    inset: 0 calc(50% - 50vw);
 
     background-image:
         linear-gradient(
